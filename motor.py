@@ -111,10 +111,15 @@ def right():
     GPIO.output(in7,GPIO.HIGH)
     GPIO.output(in8,GPIO.LOW)
 
-def speedLow():
+def speedHigh():
     pwmA.ChangeDutyCycle(100)
     pwmB.ChangeDutyCycle(100)
-def speedHigh():
+    
+def speedMed():
     pwmA.ChangeDutyCycle(50)
     pwmB.ChangeDutyCycle(50)
+
+def speedLow():
+    pwmA.ChangeDutyCycle(25)
+    pwmB.ChangeDutyCycle(25)   
 
