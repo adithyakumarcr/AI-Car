@@ -1,12 +1,5 @@
 # Python Script
-
 import RPi.GPIO as GPIO          
-from time import sleep
-import time
-
-
-import sys, select, termios, tty
-
 
 enA = 33
 enB = 32
@@ -48,25 +41,8 @@ pwmB=GPIO.PWM(enB,100)
 pwmA.start(20)
 pwmB.start(20)
 
-print("\n")
-print("The default speed & direction of motor is LOW & Forward.....")
-print("r-run s-stop f-forward b-backward l-low m-medium h-high e-exit")
-print("\n")    
-
 pwmA.ChangeDutyCycle(100)
 pwmB.ChangeDutyCycle(100)
-
-
-def getKey():
-    tty.setraw(sys.stdin.fileno())
-    rlist, _, _ = select.select([sys.stdin], [], [], 0.1)
-    if rlist:
-        key = sys.stdin.read(1)
-    else:
-        key = ''
-
-    termios.tcsetattr(sys.stdin, termios.TCSADRAIN, settings)
-    return key
 
 
 	
