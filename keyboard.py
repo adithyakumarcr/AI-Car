@@ -6,7 +6,6 @@ import time
 
 import sys, select, termios, tty
 
-
 print("\n")
 print("The default speed & direction of motor is LOW & Forward.....")
 print("r-run s-stop f-forward b-backward l-low m-medium h-high e-exit")
