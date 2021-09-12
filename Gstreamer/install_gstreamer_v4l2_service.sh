@@ -7,13 +7,13 @@ else
 fi
 
 # copy sh files
-sudo cp ./start_seeker.sh /usr/local/sbin/computer/start_v4l2.sh
+sudo cp ./start_v4l2.sh /usr/local/sbin/computer/start_v4l2.sh
 
 # +x for sh files
 sudo chmod +x /usr/local/sbin/computer/start_v4l2.sh
 
 # copy service files to systemd
-sudo cp ./gstseekercamera.service /etc/systemd/system/gstseekercamera.service
+sudo cp ./webcam.service /etc/systemd/system/webcam.service
 
 # reload service daemon
 sudo systemctl daemon-reload
@@ -22,4 +22,4 @@ sudo systemctl daemon-reload
 # sudo systemctl start gstseekercamera.service
 
 # Enable the service during startup
-sudo systemctl enable gstseekercamera.service
+sudo systemctl enable webcam.service
